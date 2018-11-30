@@ -2,7 +2,7 @@ function kloc = stiffnessmatrix(X,Y,elem_type,ngauss,thk,D)
 
 if ngauss == 1
     [J,Jinv,jac,B] = jacobian_calc(elem_type,X,Y,0,0);
-    kloc = B'*thk*D*B*jac;
+    kloc = 2*B'*thk*D*B*jac;
 end
 
 if ngauss == 4
